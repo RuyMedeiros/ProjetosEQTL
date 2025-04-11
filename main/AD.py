@@ -9,7 +9,7 @@ import sys
 servico = "sistema_remoto"
 
 def conectar_servidor(usuario, senha):
-    """Função para conectar ao servidor remoto."""
+    #Função para conectar ao servidor remoto.
     pyautogui.hotkey('winleft', 'r')
     pyautogui.write('mstsc')
     pyautogui.press('enter')
@@ -30,19 +30,19 @@ def conectar_servidor(usuario, senha):
     sys.exit()  # Encerra o script completamente
 
 def alterar_senha(usuario):
-    """Função para alterar a senha no Keyring."""
+    #Função para alterar a senha no Keyring.
     nova_senha = simpledialog.askstring("Alterar Senha", "Digite a nova senha de rede:", show='*')
     if nova_senha:
         keyring.set_password(servico, usuario, nova_senha)
         messagebox.showinfo("Sucesso", "Senha alterada com sucesso!")
 
 def excluir_senha(usuario):
-    """Função para excluir a senha do Keyring."""
+    #Função para excluir a senha do Keyring.
     keyring.delete_password(servico, usuario)
     messagebox.showinfo("Sucesso", "Senha excluída com sucesso!")
 
 def menu():
-    """Menu principal para interação com o usuário."""
+    #Menu principal para interação com o usuário.
     root = tk.Tk()
     root.withdraw()  # Oculta a janela principal do tkinter
 
